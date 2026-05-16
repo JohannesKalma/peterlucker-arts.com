@@ -1,0 +1,219 @@
+    * {
+        box-sizing: border-box;
+        /* Prevents padding from breaking widths */
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        background-color: #3b3b3b;
+        color: #e8e8e8;
+        margin: 0;
+    }
+
+    a {
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    p {
+        margin-bottom: 10px;
+    }
+
+    .wrapper {
+        max-width: 1000px;
+        /* Flexible max-width instead of fixed */
+        margin: 0 auto;
+        margin: 0 auto;
+        padding: 0 10px;
+    }
+
+    .content {
+        margin-bottom: 0;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 25px;
+        width: 995px;
+    }
+
+   
+
+    /* Modern Flexbox Menu */
+    .navigation {
+        display: flex;
+        flex-wrap: wrap;
+        /* Allows items to wrap on small screens */
+        gap: 20px;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .navigation-item {
+        display: flex;
+        flex-direction: column;
+        width: 150px;
+    }
+
+    .navigation-item img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .art-link img {
+        filter: grayscale(100%);
+        transition: filter 0.5s ease;
+    }
+
+    .art-link:hover img {
+        filter: grayscale(0%);
+    }
+
+    /* Sidebar/Contact Links */
+    .nav-sub {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        min-width: 150px;
+    }
+
+    .nav-sub a {
+        margin-bottom: 10px;
+    }
+
+    .title {
+        margin-top: 40px;
+        text-align: left;
+    }
+
+    .title img {
+        max-width: 100%;
+        height: auto;
+    }
+
+
+
+    #page {
+        margin: 1.5em 0;
+    }
+
+    #page h2 {
+        font-variant: small-caps;
+        font-size: 2em;
+        margin: 0;
+    }
+
+    /* --- NEW FLEXBOX LAYOUT --- */
+
+    .art-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        /* Aligns top of image with top of text */
+        margin-bottom: 60px;
+        /* Space between painting entries */
+        border-bottom: 1px solid #555;
+        padding-bottom: 40px;
+    }
+
+    .post {
+        width: 48%;
+        /* Equal width columns */
+        flex-shrink: 0;
+    }
+
+    .post figure {
+        margin-block-start: 0;
+        margin-block-end: 0;
+        margin-inline-start: 0;
+        margin-inline-end: 0;
+        display: block;
+    }
+
+    .post img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .main_meta {
+        width: 48%;
+        /* Equal width columns */
+        flex-shrink: 0;
+    }
+
+    .main_meta h2 {
+        /*border-bottom: 1px solid #666;*/
+        margin-top: 0;
+        /* Ensures alignment with the image top */
+        font-size: 1.5em;
+    }
+
+    .main_meta ul {
+        list-style-type: none;
+        padding-left: 1.5em;
+    }
+
+    .main_meta li {
+        margin-bottom: 10px;
+        line-height: 1.4;
+    }
+
+    #footer {
+        height: 4em;
+        clear: both;
+        width: 100%;
+        border-top: 1px solid #666;
+        margin-top: 20px;
+    }
+
+    .copyright {
+        font-size: .95em;
+        padding-top: 1em;
+    }
+
+    figcaption {
+        font-size: 0.9em;
+        margin-top: 10px;
+        font-style: italic;
+    }
+
+    #plaatje_peter {
+        border-bottom-color: #ffffff;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-left-color: #ffffff;
+        border-left-style: solid;
+        border-left-width: 1px;
+        border-right-color: #ffffff;
+        border-right-style: solid;
+        border-right-width: 1px;
+        border-top-color: #ffffff;
+        border-top-style: solid;
+        border-top-width: 1px;
+        margin-right: 10px;
+    }
+
+        /* Mobile Adjustments */
+    @media (max-width: 600px) {
+        .menu {
+            justify-content: center;
+        }
+
+        .title {
+            text-align: center;
+        }
+
+        .art-row {
+            flex-direction: column;
+        }
+
+        .main_meta h2 {
+            margin-top: 50px;
+        }
+
+    }
