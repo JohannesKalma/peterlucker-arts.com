@@ -1,0 +1,16 @@
+<%- include('partials/header') %>
+    <%- content %>
+    <% if (locals.comments && Array.isArray(comments)) { %>
+        <div class="comments">
+            <ul>
+                <% comments.forEach(comment=> { %>
+                    <li>
+                        <em><%= comment.author %></em><br>
+                            <%= comment.content %><br>
+                                <span style="font-size: 0.7em; color: #9f9f9f"><%= comment.date %></span>
+                    </li>
+                    <% }); %>
+            </ul>
+        </div>
+    <% } %>
+<%- include('partials/footer') %>

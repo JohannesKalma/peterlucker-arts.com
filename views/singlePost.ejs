@@ -1,0 +1,19 @@
+<%- include('partials/header') %>
+    <header id="page">
+        <h2><%- title %></h2>
+    </header>
+<div class="post">    
+<%- content %>
+</div>
+<div class="main_meta">
+    <ul>
+        <li><%- jaar %></li>
+        <li>
+            <% extra && Array.isArray(extra) && extra.forEach(extraItem=> { %>
+                <p><%- extraItem %></p>
+            <% }) %>
+        </li>
+    </ul>
+<div class="date">Published on <%- date %></div>
+</div>
+<%- include('partials/footer') %>

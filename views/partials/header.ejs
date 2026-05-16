@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Vital for responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peter Lucker - Arts</title>
+
+    <!-- <link rel="stylesheet" href="./css/style.css"> -->
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #3b3b3b;
+            color: #e8e8e8;
+            margin: 0;
+            line-height: 1.6;
+            /* Gemini: Improved readability */
+        }
+
+        a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        p {
+            text-align: left;
+            margin-block-start: 0em;
+            margin-block-end: 1em;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .wrapper {
+            max-width: 1000px;
+            /* Flexible max-width instead of fixed */
+            margin: 0 auto;
+            padding: 0 10px;
+            /* Gemini adviced padding: 20px */
+        }
+
+        /* --- NAVIGATION --- */
+        /* Gemini: Modern Flexbox Menu */
+        .navigation {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            /*Gemini adviced gap: 15px;*/
+            justify-content: space-between;
+            justify-content: center;
+            /* Gemini:Center for mobile */
+            /*align-items: flex-start;*/
+        }
+
+        .navigation-item {
+            display: flex;
+            flex-direction: column;
+            width: calc(50% - 15px);
+            /* Gemini: 2 items per row on mobile */
+            max-width: 150px;
+        }
+
+        .navigation-item img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .art-link img {
+            filter: grayscale(100%);
+            transition: filter 0.5s ease;
+        }
+
+        .art-link:hover img {
+            filter: grayscale(0%);
+        }
+
+        /* Sidebar/Contact Links */
+        .nav-sub {
+            display: flex;
+            /*flex-direction: column;*/
+            flex-direction: column;
+            gap: 0px;
+            /*min-width: 150px;*/
+            justify-content: center;
+            /* Gemini: Center for mobile */
+            width: 100%;
+            /* Gemini: Full width on mobile */
+            margin-top: 3px;
+            /* Gemini: Space from main menu */
+        }
+
+        .nav-sub a {
+            margin-bottom: 0px;
+        }
+
+        /* --- CONTENT --- */
+
+
+
+        .title {
+            /*margin-top: 40px;*/
+            margin: 30px 0;
+            /* Gemini: Balanced spacing */
+            text-align: left;
+            /* Gemini: Adviced text-align: center */
+        }
+
+        .title img {
+            /* max-width: 100%;*/
+            max-width: 80%;
+            /* Gemini: Don't let name overpower small screens */
+            height: auto;
+        }
+
+        /* Gemini: New content layout */
+        .content {
+            margin-top: 25px;
+            width: 100%;
+        }
+
+        .comments li {
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #4a4a4a;
+            border-radius: 5px;
+            list-style-type: none;
+        }
+
+        #page {
+            margin: 1.5em 0;
+        }
+
+        #page h2 {
+            font-variant: small-caps;
+            font-size: 2em;
+            margin: 0;
+        }
+
+        /* --- NEW FLEXBOX LAYOUT --- */
+
+        .art-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            /* Aligns top of image with top of text */
+            margin-bottom: 60px;
+            /* Space between painting entries */
+            border-bottom: 1px solid #555;
+            padding-bottom: 40px;
+            flex-direction: column;
+        }
+
+        .post,
+        .main_meta {
+            width: 100%;
+            /* Equal width columns */
+            flex-shrink: 0;
+        }
+
+        .post figure {
+            margin-block-start: 0;
+            margin-block-end: 0;
+            margin-inline-start: 0;
+            margin-inline-end: 0;
+            display: block;
+        }
+
+        .main_meta h2 {
+            /*border-bottom: 1px solid #666;*/
+            margin-top: 0em;
+            /* Ensures alignment with the image top */
+            font-size: 1.5em;
+        }
+
+        .main_meta ul {
+            list-style-type: none;
+            padding-left: 1.5em;
+        }
+
+        .main_meta li {
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .main_meta .date {
+            font-size: x-small;
+            text-align: right;
+        }
+
+        #footer {
+            height: 4em;
+            width: 100%;
+            border-top: 1px solid #666;
+            margin-top: 20px;
+        }
+
+        .copyright {
+            font-size: .95em;
+            padding-top: 1em;
+        }
+
+        figcaption {
+            font-size: 0.9em;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* Profile Image Fix */
+        #plaatje_peter {
+            /* GEMINI
+            border-bottom-color: #ffffff;
+            border-bottom-style: solid;
+            border-bottom-width: 1px;
+            border-left-color: #ffffff;
+            border-left-style: solid;
+            border-left-width: 1px;
+            border-right-color: #ffffff;
+            border-right-style: solid;
+            border-right-width: 1px;
+            border-top-color: #ffffff;
+            border-top-style: solid;
+            border-top-width: 1px;
+            margin-right: 10px;*/
+
+            /* GEMINI*/
+            border: 1px solid #ffffff;
+            margin: 0 auto 20px auto;
+            display: block;
+            /* Centered on mobile */
+            float: none;
+        }
+
+        /* Desktop Adjustments */
+        @media (min-width: 768px) {
+            .navigation {
+                justify-content: space-between;
+            }
+
+            .navigation-item {
+                width: 150px;
+            }
+
+            .nav-sub {
+                width: auto;
+                text-align: right;
+            }
+
+            .title {
+                text-align: left;
+            }
+
+            #plaatje_peter {
+                float: left;
+                /* Wrap text on desktop */
+                margin-right: 20px;
+            }
+
+            .art-row {
+                flex-direction: row;
+            }
+
+            .art-row .post,
+            .art-row .main_meta {
+                width: 48%;
+            }
+
+            .nav-sub a {
+                margin-bottom: 10px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav class="navigation">
+            <div class="navigation-item">
+                <img src="https://peterlucker-arts.com/nav-images/title_realisme.png" alt="Realisme">
+                <a href="realisme" class="art-link">
+                    <img src="https://peterlucker-arts.com/nav-images/m_1_cl.jpg" alt="Art 1">
+                </a>
+            </div>
+
+            <div class="navigation-item">
+                <img src="https://peterlucker-arts.com/nav-images/title_abstract.png" alt="Abstract">
+                <a href="abstract" class="art-link">
+                    <img src="https://peterlucker-arts.com/nav-images/m_2_cl.jpg" alt="Art 2">
+                </a>
+            </div>
+
+            <div class="navigation-item">
+                <img src="https://peterlucker-arts.com/nav-images/title_beeld.png" alt="Beeld">
+                <a href="beelden-grafiek-tekeningen" class="art-link">
+                    <img src="https://peterlucker-arts.com/nav-images/m_3_cl.jpg" alt="Art 3">
+                </a>
+            </div>
+
+            <div class="navigation-item">
+                <img src="https://peterlucker-arts.com/nav-images/title_fotografie.png" alt="Fotografie">
+                <a href="fotografie" class="art-link">
+                    <img src="https://peterlucker-arts.com/nav-images/m_4_cl.jpg" alt="Art 4">
+                </a>
+            </div>
+
+            <div class="nav-sub">
+                <a href="https://peterlucker-arts.com/contact"><img src="https://peterlucker-arts.com/nav-images/pla_contact_off.png" alt="Contact"></a>
+                <a href="https://peterlucker-arts.com/info"><img src="https://peterlucker-arts.com/nav-images/pla_info_off.png" alt="Info"></a>
+                <a href="https://peterlucker-arts.com"><img src="https://peterlucker-arts.com/nav-images/pla_home_off.png" alt="Home"></a>
+            </div>
+        </nav>
+
+        <div class="title">
+            <img src="https://peterlucker-arts.com/nav-images/peter_lucker.png" alt="Peter Lucker">
+        </div>
+
+        <div class="content">

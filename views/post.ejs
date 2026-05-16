@@ -1,0 +1,26 @@
+<%- include('partials/header') %>
+
+    <header id="page">
+        <h2><%- title %></h2>
+    </header>
+
+    <% locals.data && Array.isArray(locals.data) && locals.data.forEach(item=> { %>
+        <section class="art-row">
+            <div class="post">
+                <%- item.content %>
+            </div>
+            <div class="main_meta">
+                <h2><%- item.title %></h2>
+                <ul>
+                    <li><%- item.jaar %></li>
+                    <li>
+                        <% item.extra && Array.isArray(item.extra) && item.extra.forEach(extraItem=> { %>
+                            <p><%- extraItem %></p>
+                            <% }) %>
+                    </li>
+                </ul>
+                <div class="date">Published on <%- item.date %></div>
+            </div>
+        </section>
+        <% }) %>
+            <%- include('partials/footer') %>

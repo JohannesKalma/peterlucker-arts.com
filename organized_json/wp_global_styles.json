@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Custom Styles",
+    "link": "./1487",
+    "pubDate": "Sun, 06 Mar 2022 12:42:54 +0000",
+    "creator": "knilluz",
+    "content": "{\"version\": 2, \"isGlobalStylesUserThemeJSON\": true }",
+    "excerpt": "",
+    "post_id": 1487,
+    "post_date": "2022-03-06 12:42:54",
+    "post_name": "wp-global-styles-ocular-pla",
+    "status": "publish",
+    "post_type": "wp_global_styles",
+    "categories": [
+      "ocular.pla"
+    ],
+    "meta": {},
+    "comments": []
+  }
+]
